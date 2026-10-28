@@ -1,0 +1,7 @@
+myenv/
+venv/
+main/__pycache__/
+tests/__pycache__/
+**/*.pyc
+*.pyc
+notebooks/figures/
