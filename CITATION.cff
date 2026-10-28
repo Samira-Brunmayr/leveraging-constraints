@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 title: "Basecalling for DNA storage"
-version: 1.0.0
+version: 1.0.1
 license: "MIT"
 type: software
 abstract: "Code accompanying the paper 'Basecalling for DNA storage'. Includes a PyTorch reimplementation of the SACall basecaller, whole-model, decoder and low-rank adaptation (LoRA) fine-tuning on simulated nanopore signals of Goldman-encoded DNA, a constraint-aware CTC beam search (fork of fast-ctc-decode) using homopolymer, length and base-composition constraints, and the evaluation and statistical analysis scripts."
