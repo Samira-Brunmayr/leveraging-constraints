@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "Basecalling for DNA storage"
+version: 1.0.0
+license: "MIT"
+type: software
+abstract: "Code accompanying the paper 'Basecalling for DNA storage'. Includes a PyTorch reimplementation of the SACall basecaller, whole-model, decoder and low-rank adaptation (LoRA) fine-tuning on simulated nanopore signals of Goldman-encoded DNA, a constraint-aware CTC beam search (fork of fast-ctc-decode) using homopolymer, length and base-composition constraints, and the evaluation and statistical analysis scripts."
+message: "If you use this software, please cite it as below."
+authors:
+  - given-names: Advait
+    family-names: Menon
+    affiliation: "Department of Computing, Imperial College London"
+  - given-names: Samira
+    family-names: Brunmayr
+    affiliation: "Department of Computing, Imperial College London"
+    orcid: "https://orcid.org/0009-0009-2312-2215"
+  - given-names: Omer
+    family-names: Sella
+    affiliation: "Department of Computing, Imperial College London"
+  - given-names: Thomas
+    family-names: Heinis
+    affiliation: "Department of Computing, Imperial College London"
+keywords:
+  - DNA data storage
+  - nanopore sequencing
+  - basecalling
+  - low-rank adaptation
+  - beam search
