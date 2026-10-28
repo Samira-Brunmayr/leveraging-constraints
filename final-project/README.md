@@ -308,8 +308,6 @@ Each script basecalls with `main.scripts.basecall`, computes read metrics with `
 
 **Run order.** `table77_repeats_parallel.sh` is the only script that creates the 11 evaluation datasets, so run it first. The other four scripts reuse those datasets and stop if any of them is missing.
 
-> ⚠️ `table77_repeats_parallel.sh` deletes and regenerates `../data/goldman_synthetic_data_seed_<N>` and `../experiments/table77_repeats/seed_<N>` for every seed (`rm -rf`). The scripts for Tables 4–8 use `--overwrite`, so they overwrite their own earlier results. `table61_repeats_parallel.sh` never overwrites anything: each run writes to a new timestamped `run_*` folder.
-
 Example:
 ```
 cd final-project

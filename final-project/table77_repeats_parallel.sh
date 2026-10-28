@@ -67,27 +67,6 @@ run_seed() {
   local outroot="$EXP_ROOT/seed_${seed}"
   local f name length_lambda kl_lambda
 
-  rm -rf -- "$dataset" "$outroot"
-
-  printf '=== Generating dataset for seed %s ===\n' "$seed"
-  python -m main.scripts.dataset_generator \
-    --input-dir "$INPUT_DIR" \
-    --output-dir "$dataset" \
-    --path-to-code "$CODE" \
-    --threads "$THREADS" \
-    --encoding-method goldman \
-    --seed "$seed"
-
-  mkdir -p -- "$dataset/fastq"
-  for f in "$dataset"/genomes/*.fna; do
-    [[ -f "$f" ]] || {
-      echo "No genome files generated for seed $seed" >&2
-      return 1
-    }
-    name=$(basename "$f" .fna)
-    cp -- "$f" "$dataset/fastq/${name}.fasta"
-  done
-
   evaluate_variant "$dataset" "$outroot/default"
 
   for length_lambda in 5 10 15; do
