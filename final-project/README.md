@@ -306,7 +306,7 @@ Each script basecalls with `main.scripts.basecall`, computes read metrics with `
 | `table75_76_repeats_parallel.sh` | Tables 7, 8 | KL penalty λ ∈ {1,5,10,15,20} and KL discard θ ∈ {0.01,0.05,0.1} (entropy ratio 0.8) | 99 | `../experiments/table75_76_repeats` |
 | `table61_repeats_parallel.sh` | Table 1 | Baseline plus 7 fine-tuned models (whole-model, decoder, LoRA ranks 1/2/4/8/16) × 3 training seeds × 11 test seeds | 242 | `../experiments/table61_eval_3train_10test/run_<timestamp>_XXXXXX` |
 
-**Run order.** `table77_repeats_parallel.sh` is the only script that creates the 11 evaluation datasets, so run it first. The other four scripts reuse those datasets and stop if any of them is missing.
+**Run order.** `table77_repeats_parallel.sh` also creates the 11 evaluation datasets, so run it first. The other four scripts reuse those datasets and stop if any of them is missing.
 
 Example:
 ```
