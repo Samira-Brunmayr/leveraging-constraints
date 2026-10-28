@@ -1,0 +1,21 @@
+\begin{table}[!htb]
+\begin{adjustwidth}{-2.25in}{0in}
+\centering
+\caption{Beam search discarding extensions whose length per time step is too far from the target rate.}
+\label{tab:length_discard_results}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccccccccc}
+\toprule
+$\theta$ & Length & Length & Payload & Alignment & Read acc. & M rate & X rate & I rate & D rate \\
+ & (S, nt) & (F, nt) & acc. (\%) & rate (\%) & (\%) & (\%) & (\%) & (\%) & (\%) \\
+\midrule
+\rowcolor{blue!15} - & 105.68 $\pm$ 0.01 & 95.07 $\pm$ 0.06 & 28.75 $\pm$ 0.10 & 42.93 $\pm$ 0.14 & 85.61 $\pm$ 0.00 & 92.94 $\pm$ 0.03 & 2.50 $\pm$ 0.09 & 0.00 $\pm$ 0.00 & 3.90 $\pm$ 0.02 \\
+0.05 & 130.91 $\pm$ 0.02 & 124.21 $\pm$ 0.03 & 29.06 $\pm$ 0.10 & 42.62 $\pm$ 0.13 & 85.98 $\pm$ 0.14 & 92.85 $\pm$ 0.01 & 2.49 $\pm$ 0.09 & 0.00 $\pm$ 0.00 & 4.31 $\pm$ 0.03 \\
+0.1 & 124.05 $\pm$ 0.01 & 116.07 $\pm$ 0.04 & 29.18 $\pm$ 0.10 & 42.65 $\pm$ 0.14 & 85.78 $\pm$ 0.17 & 92.85 $\pm$ 0.01 & 2.47 $\pm$ 0.10 & 0.00 $\pm$ 0.00 & 4.29 $\pm$ 0.03 \\
+\rowcolor{red!15} 0.2 & 110.55 $\pm$ 0.01 & 100.42 $\pm$ 0.06 & 29.45 $\pm$ 0.09 & 42.85 $\pm$ 0.15 & 85.90 $\pm$ 0.20 & 92.86 $\pm$ 0.01 & 2.50 $\pm$ 0.09 & 0.00 $\pm$ 0.00 & 4.25 $\pm$ 0.04 \\
+0.5 & 105.58 $\pm$ 0.01 & 94.96 $\pm$ 0.06 & 28.37 $\pm$ 0.09 & 42.42 $\pm$ 0.14 & 85.60 $\pm$ 0.04 & 92.89 $\pm$ 0.01 & 2.37 $\pm$ 0.06 & 0.00 $\pm$ 0.00 & 4.07 $\pm$ 0.04 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize File-specific summaries are weighted by encoded strand count. Read accuracy and M/X/I/D are weighted means of file-specific medians, not pooled-read medians. Successful/failed sequence features are weighted file-specific group means; files with an empty group are excluded from that group mean. A wholly undefined run-level group summary is NA. Percentages and their SDs are displayed on the percentage scale. Values are mean $\pm$ sample SD across exactly 11 test seeds (1--10, 42). Blue denotes the baseline from this experiment folder. Red denotes the largest unrounded mean alignment rate among the modified configurations, which need not exceed baseline. KL uses natural logarithms. S5 comparisons use these same per-test-set values.\end{flushleft}
+\end{adjustwidth}
+\end{table}

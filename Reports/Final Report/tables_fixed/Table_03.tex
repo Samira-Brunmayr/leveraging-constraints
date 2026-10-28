@@ -1,0 +1,36 @@
+\begin{table}[!htb]
+\begin{adjustwidth}{-2.25in}{0in}
+\centering
+\caption{Saved forward- and backward-event profiler statistics.}
+\label{tab:benchmark_cpu_cuda_usage}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccccc}
+\toprule
+Fine-tuning method & Event & CPU event time & CUDA event time & CPU net allocation & CUDA net allocation \\
+ &  & (ms) & (ms) & (B) & (GB) \\
+\midrule
+Whole-Model & Forward Pass & 7.176 & 211.198 & 48.0 & 7.468 \\
+ & Backward Pass & 10.471 & 0.001 & -48.0 & -7.478 \\
+\midrule
+Decoder & Forward Pass & 6.233 & 77.077 & 0.0 & 0.034 \\
+ & Backward Pass & 1.394 & 0.001 & 0.0 & -0.064 \\
+\midrule
+LoRA Rank 1 & Forward Pass & 8.332 & 77.228 & 144.0 & 6.070 \\
+ & Backward Pass & 9.006 & 0.001 & -144.0 & -6.099 \\
+\midrule
+LoRA Rank 2 & Forward Pass & 8.240 & 77.275 & 144.0 & 6.070 \\
+ & Backward Pass & 9.198 & 0.001 & -144.0 & -6.099 \\
+\midrule
+LoRA Rank 4 & Forward Pass & 8.284 & 77.356 & 144.0 & 6.070 \\
+ & Backward Pass & 8.642 & 0.001 & -144.0 & -6.099 \\
+\midrule
+LoRA Rank 8 & Forward Pass & 8.393 & 77.280 & 144.0 & 6.070 \\
+ & Backward Pass & 8.779 & 0.001 & -144.0 & -6.099 \\
+\midrule
+LoRA Rank 16 & Forward Pass & 8.537 & 77.353 & 144.0 & 6.070 \\
+ & Backward Pass & 8.955 & 0.001 & -144.0 & -6.099 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize Saved profiler fields from training seed 42. Time fields are converted from $\mu$s to ms and CUDA allocation fields from bytes to decimal GB. CUDA event time is the attribution stored in profile.csv, not a new synchronized measurement of total GPU training latency. Memory columns are signed allocation changes attributed to the saved events: negative values indicate net release. They are not total RAM/VRAM occupancy or peak memory requirements. No profiling or training is rerun by this notebook.\end{flushleft}
+\end{adjustwidth}
+\end{table}

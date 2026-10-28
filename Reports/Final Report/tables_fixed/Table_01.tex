@@ -1,0 +1,24 @@
+\begin{table}[!htb]
+\begin{adjustwidth}{-2.25in}{0in}
+\centering
+\caption{Summary of fine-tuning results on the simulated evaluation dataset.}
+\label{tab:finetune_general_results}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccccccccccccc}
+\toprule
+Fine-tune & Homopolymers & Homopolymers & Length & Length & KL ($\times10^{-3}$) & KL ($\times10^{-3}$) & Payload & Alignment & Read acc. & M rate & X rate & I rate & D rate \\
+method & (S) & (F) & (S, nt) & (F, nt) & (S) & (F) & acc. (\%) & rate (\%) & (\%) & (\%) & (\%) & (\%) & (\%) \\
+\midrule
+\rowcolor{blue!15} - & 2.47 $\pm$ 0.00 & 4.24 $\pm$ 0.01 & 105.68 $\pm$ 0.01 & 95.07 $\pm$ 0.06 & 9.4 $\pm$ 0.0 & 35.1 $\pm$ 0.2 & 28.75 $\pm$ 0.10 & 42.93 $\pm$ 0.14 & 85.61 $\pm$ 0.00 & 92.94 & 2.50 & 0.00 & 3.90 \\
+Whole-Model & 0.04 $\pm$ 0.00 & 0.19 $\pm$ 0.01 & 115.30 $\pm$ 0.01 & 37.67 $\pm$ 0.04 & 6.2 $\pm$ 0.0 & 59.0 $\pm$ 1.6 & 99.25 $\pm$ 0.00 & 98.00 $\pm$ 0.00 & 97.44 $\pm$ 0.00 & 100.00 & 0.00 & 0.00 & 0.00 \\
+Decoder & 1.23 $\pm$ 0.00 & 2.34 $\pm$ 0.01 & 111.81 $\pm$ 0.02 & 105.37 $\pm$ 0.05 & 6.0 $\pm$ 0.0 & 30.4 $\pm$ 0.1 & 42.46 $\pm$ 0.08 & 63.21 $\pm$ 0.08 & 90.60 $\pm$ 0.00 & 95.37 & 1.89 & 0.86 & 1.77 \\
+LoRA Rank 1 & 0.43 $\pm$ 0.02 & 0.90 $\pm$ 0.06 & 113.80 $\pm$ 0.09 & 42.95 $\pm$ 0.71 & 6.5 $\pm$ 0.1 & 120.9 $\pm$ 5.7 & 90.17 $\pm$ 0.22 & 97.33 $\pm$ 0.06 & 95.73 $\pm$ 0.00 & 100.00 & 0.00 & 0.00 & 0.00 \\
+LoRA Rank 2 & 0.29 $\pm$ 0.00 & 0.71 $\pm$ 0.09 & 114.39 $\pm$ 0.22 & 39.62 $\pm$ 0.51 & 6.3 $\pm$ 0.0 & 143.2 $\pm$ 4.7 & 94.04 $\pm$ 0.03 & 97.56 $\pm$ 0.05 & 95.73 $\pm$ 0.00 & 100.00 & 0.00 & 0.00 & 0.00 \\
+\rowcolor{orange!15} LoRA Rank 4 & 0.17 $\pm$ 0.03 & 0.49 $\pm$ 0.03 & 114.80 $\pm$ 0.05 & 37.69 $\pm$ 0.27 & 6.3 $\pm$ 0.0 & 151.8 $\pm$ 10.4 & 96.26 $\pm$ 0.07 & 97.72 $\pm$ 0.03 & 96.58 $\pm$ 0.00 & 100.00 & 0.00 & 0.00 & 0.00 \\
+LoRA Rank 8 & 0.14 $\pm$ 0.03 & 0.42 $\pm$ 0.05 & 114.92 $\pm$ 0.05 & 37.11 $\pm$ 0.44 & 6.3 $\pm$ 0.0 & 168.4 $\pm$ 13.7 & 97.12 $\pm$ 0.07 & 97.79 $\pm$ 0.02 & 96.58 $\pm$ 0.00 & 100.00 & 0.00 & 0.00 & 0.00 \\
+LoRA Rank 16 & 0.11 $\pm$ 0.02 & 0.42 $\pm$ 0.11 & 115.07 $\pm$ 0.08 & 36.68 $\pm$ 0.32 & 6.3 $\pm$ 0.0 & 164.9 $\pm$ 5.7 & 97.66 $\pm$ 0.04 & 97.82 $\pm$ 0.01 & 96.58 $\pm$ 0.00 & 100.00 & 0.00 & 0.00 & 0.00 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize File-specific summaries are weighted by encoded strand count. Read accuracy and M/X/I/D are weighted means of file-specific medians, not pooled-read medians. Successful/failed sequence features are weighted file-specific group means; files with an empty group are excluded from that group mean. A wholly undefined run-level group summary is NA. Percentages and their SDs are displayed on the percentage scale. For each trained model, results are first averaged over 11 test sets; mean $\pm$ sample SD is then calculated over three training seeds (1, 2, 42). Baseline mean $\pm$ sample SD is over the same 11 test seeds (1--10, 42). M/X/I/D are shown without SDs. KL uses natural logarithms. Orange identifies the smallest LoRA parameter count attaining the greatest unrounded mean read accuracy among LoRA configurations. Comparisons are in S5 Table.\end{flushleft}
+\end{adjustwidth}
+\end{table}

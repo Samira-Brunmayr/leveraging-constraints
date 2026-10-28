@@ -1,0 +1,20 @@
+\begin{table}[!htb]
+\centering
+\caption{Trainable parameter count of each fine-tuning method.}
+\label{tab:finetune_parameter_counts}
+\resizebox{0.5\linewidth}{!}{%
+\begin{tabular}{lc}
+\toprule
+Fine-tuning method & Trainable parameters \\
+\midrule
+Whole-Model & 4,833,669 \\
+Decoder & 1,285 \\
+LoRA Rank 1 & 6,144 \\
+LoRA Rank 2 & 12,288 \\
+LoRA Rank 4 & 24,576 \\
+LoRA Rank 8 & 49,152 \\
+LoRA Rank 16 & 98,304 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize Counts are the model configurations reported in the supplied manuscript.\end{flushleft}
+\end{table}

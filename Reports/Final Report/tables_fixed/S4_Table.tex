@@ -1,0 +1,43 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=0.4in,landscape]{geometry}
+\usepackage{booktabs,graphicx,amsmath}
+\usepackage[table]{xcolor}
+\usepackage[labelfont=bf,labelsep=period]{caption}
+\renewcommand{\thetable}{S4}
+\pagestyle{empty}
+\begin{document}
+\begin{table}[!htb]
+\centering
+\caption{Fine-tuning methods with and without the combined beam-search configuration.}
+\label{tab:s4_combined_finetuning}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccccccc}
+\toprule
+Fine-tuning method & Payload & Alignment & Read acc. & M rate & X rate & I rate & D rate \\
+ & acc. (\%) & rate (\%) & (\%) & (\%) & (\%) & (\%) & (\%) \\
+\midrule
+Whole-Model & \cellcolor{blue!15} 99.23 $\pm$ 0.01 & \cellcolor{blue!15} 98.04 $\pm$ 0.01 & \cellcolor{blue!15} 97.44 $\pm$ 0.00 & \cellcolor{blue!15} 100.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 \\
+ & 99.26 $\pm$ 0.00 & 98.05 $\pm$ 0.00 & 97.44 $\pm$ 0.00 & 100.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 \\
+\midrule
+Decoder & \cellcolor{blue!15} 42.39 $\pm$ 0.09 & \cellcolor{blue!15} 63.18 $\pm$ 0.07 & \cellcolor{blue!15} 90.60 $\pm$ 0.00 & \cellcolor{blue!15} 95.35 $\pm$ 0.02 & \cellcolor{blue!15} 1.90 $\pm$ 0.01 & \cellcolor{blue!15} 0.86 $\pm$ 0.00 & \cellcolor{blue!15} 1.77 $\pm$ 0.01 \\
+ & 45.57 $\pm$ 0.10 & 69.21 $\pm$ 0.03 & 90.62 $\pm$ 0.00 & 95.53 $\pm$ 0.01 & 1.79 $\pm$ 0.01 & 0.88 $\pm$ 0.00 & 1.64 $\pm$ 0.00 \\
+\midrule
+LoRA Rank 1 & \cellcolor{blue!15} 90.09 $\pm$ 0.20 & \cellcolor{blue!15} 97.38 $\pm$ 0.08 & \cellcolor{blue!15} 95.73 $\pm$ 0.00 & \cellcolor{blue!15} 99.99 $\pm$ 0.01 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 \\
+ & 91.76 $\pm$ 0.17 & 97.51 $\pm$ 0.05 & 95.73 $\pm$ 0.00 & 100.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 \\
+\midrule
+LoRA Rank 2 & \cellcolor{blue!15} 93.97 $\pm$ 0.05 & \cellcolor{blue!15} 97.60 $\pm$ 0.03 & \cellcolor{blue!15} 95.73 $\pm$ 0.00 & \cellcolor{blue!15} 100.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 \\
+ & 94.77 $\pm$ 0.05 & 97.69 $\pm$ 0.03 & 96.54 $\pm$ 0.07 & 100.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 \\
+\midrule
+LoRA Rank 4 & \cellcolor{blue!15} 96.25 $\pm$ 0.07 & \cellcolor{blue!15} 97.76 $\pm$ 0.03 & \cellcolor{blue!15} 96.58 $\pm$ 0.00 & \cellcolor{blue!15} 100.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 \\
+ & 96.66 $\pm$ 0.11 & 97.81 $\pm$ 0.02 & 96.58 $\pm$ 0.00 & 100.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 \\
+\midrule
+LoRA Rank 8 & \cellcolor{blue!15} 97.09 $\pm$ 0.05 & \cellcolor{blue!15} 97.84 $\pm$ 0.01 & \cellcolor{blue!15} 96.58 $\pm$ 0.00 & \cellcolor{blue!15} 100.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 \\
+ & 97.38 $\pm$ 0.05 & 97.87 $\pm$ 0.02 & 96.58 $\pm$ 0.00 & 100.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 \\
+\midrule
+LoRA Rank 16 & \cellcolor{blue!15} 97.64 $\pm$ 0.05 & \cellcolor{blue!15} 97.86 $\pm$ 0.01 & \cellcolor{blue!15} 96.58 $\pm$ 0.00 & \cellcolor{blue!15} 100.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 & \cellcolor{blue!15} 0.00 $\pm$ 0.00 \\
+ & 97.85 $\pm$ 0.05 & 97.89 $\pm$ 0.01 & 96.58 $\pm$ 0.00 & 100.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize File-specific summaries are weighted by encoded strand count. Read accuracy and M/X/I/D are weighted means of file-specific medians, not pooled-read medians. Successful/failed sequence features are weighted file-specific group means; files with an empty group are excluded from that group mean. A wholly undefined run-level group summary is NA. Percentages and their SDs are displayed on the percentage scale. Values are mean $\pm$ sample SD over the three training seeds (1, 2, 42), each on test seed 1 only. The first (blue) row for each method uses the original decoder; the second uses the combined configuration that excludes homopolymers longer than one and applies $\lambda_{\mathrm{len}}=5$, $\lambda_{\mathrm{KL}}=1$. These are not averages over the 11 test seeds used in Table 1.\end{flushleft}
+\end{table}
+\end{document}

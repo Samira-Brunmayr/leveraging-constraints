@@ -1,0 +1,22 @@
+\begin{table}[!htb]
+\begin{adjustwidth}{-2.25in}{0in}
+\centering
+\caption{Beam search with a KL-divergence penalty on base composition.}
+\label{tab:kl_penalty_results}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccccccccc}
+\toprule
+$\lambda$ & KL ($\times10^{-3}$) & KL ($\times10^{-3}$) & Payload & Alignment & Read acc. & M rate & X rate & I rate & D rate \\
+ & (S) & (F) & acc. (\%) & rate (\%) & (\%) & (\%) & (\%) & (\%) & (\%) \\
+\midrule
+\rowcolor{blue!15} - & 9.4 $\pm$ 0.0 & 35.1 $\pm$ 0.2 & 28.75 $\pm$ 0.11 & 42.93 $\pm$ 0.14 & 85.61 $\pm$ 0.00 & 92.94 $\pm$ 0.03 & 2.50 $\pm$ 0.09 & 0.00 $\pm$ 0.00 & 3.90 $\pm$ 0.02 \\
+1 & 8.9 $\pm$ 0.0 & 21.8 $\pm$ 0.1 & 29.29 $\pm$ 0.09 & 43.36 $\pm$ 0.13 & 85.64 $\pm$ 0.08 & 92.93 $\pm$ 0.02 & 2.51 $\pm$ 0.08 & 0.00 $\pm$ 0.00 & 3.92 $\pm$ 0.03 \\
+\rowcolor{red!15} 5 & 8.3 $\pm$ 0.0 & 16.3 $\pm$ 0.0 & 29.80 $\pm$ 0.10 & 44.02 $\pm$ 0.17 & 85.89 $\pm$ 0.12 & 92.90 $\pm$ 0.02 & 2.44 $\pm$ 0.07 & 0.00 $\pm$ 0.00 & 4.03 $\pm$ 0.04 \\
+10 & 7.8 $\pm$ 0.0 & 13.4 $\pm$ 0.0 & 29.76 $\pm$ 0.06 & 43.89 $\pm$ 0.14 & 85.49 $\pm$ 0.01 & 92.91 $\pm$ 0.01 & 2.47 $\pm$ 0.06 & 0.00 $\pm$ 0.00 & 3.94 $\pm$ 0.03 \\
+15 & 7.3 $\pm$ 0.0 & 11.4 $\pm$ 0.0 & 29.51 $\pm$ 0.07 & 43.02 $\pm$ 0.14 & 84.64 $\pm$ 0.04 & 92.92 $\pm$ 0.02 & 2.58 $\pm$ 0.07 & 0.00 $\pm$ 0.00 & 3.87 $\pm$ 0.01 \\
+20 & 9.0 $\pm$ 4.1 & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 85.37 $\pm$ 2.81 & 94.02 $\pm$ 1.47 & 2.10 $\pm$ 0.95 & 0.39 $\pm$ 0.38 & 3.50 $\pm$ 1.25 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize File-specific summaries are weighted by encoded strand count. Read accuracy and M/X/I/D are weighted means of file-specific medians, not pooled-read medians. Successful/failed sequence features are weighted file-specific group means; files with an empty group are excluded from that group mean. A wholly undefined run-level group summary is NA. Percentages and their SDs are displayed on the percentage scale. Values are mean $\pm$ sample SD across exactly 11 test seeds (1--10, 42). Blue denotes the baseline from this experiment folder. Red denotes the largest unrounded mean alignment rate among the modified configurations, which need not exceed baseline. KL uses natural logarithms. S5 comparisons use these same per-test-set values.\end{flushleft}
+\end{adjustwidth}
+\end{table}

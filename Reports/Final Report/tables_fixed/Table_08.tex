@@ -1,0 +1,20 @@
+\begin{table}[!htb]
+\begin{adjustwidth}{-2.25in}{0in}
+\centering
+\caption{Beam search with KL threshold $\theta$ and entropy threshold $0.8\log4$.}
+\label{tab:kl_discard_results}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccccccccc}
+\toprule
+$\theta$ & KL ($\times10^{-3}$) & KL ($\times10^{-3}$) & Payload & Alignment & Read acc. & M rate & X rate & I rate & D rate \\
+ & (S) & (F) & acc. (\%) & rate (\%) & (\%) & (\%) & (\%) & (\%) & (\%) \\
+\midrule
+\rowcolor{blue!15} - & 9.4 $\pm$ 0.0 & 35.1 $\pm$ 0.2 & 28.75 $\pm$ 0.11 & 42.93 $\pm$ 0.14 & 85.61 $\pm$ 0.00 & 92.94 $\pm$ 0.03 & 2.50 $\pm$ 0.09 & 0.00 $\pm$ 0.00 & 3.90 $\pm$ 0.02 \\
+0.01 & 9.2 $\pm$ 0.0 & 32.9 $\pm$ 0.2 & 28.66 $\pm$ 0.09 & 42.96 $\pm$ 0.15 & 85.60 $\pm$ 0.04 & 92.94 $\pm$ 0.02 & 2.39 $\pm$ 0.06 & 0.00 $\pm$ 0.00 & 3.94 $\pm$ 0.03 \\
+\rowcolor{red!15} 0.05 & 9.4 $\pm$ 0.0 & 33.7 $\pm$ 0.2 & 28.73 $\pm$ 0.09 & 42.96 $\pm$ 0.15 & 85.61 $\pm$ 0.00 & 92.94 $\pm$ 0.03 & 2.49 $\pm$ 0.09 & 0.00 $\pm$ 0.00 & 3.90 $\pm$ 0.02 \\
+0.1 & 9.4 $\pm$ 0.0 & 34.2 $\pm$ 0.2 & 28.75 $\pm$ 0.11 & 42.94 $\pm$ 0.15 & 85.61 $\pm$ 0.00 & 92.95 $\pm$ 0.03 & 2.50 $\pm$ 0.09 & 0.00 $\pm$ 0.00 & 3.90 $\pm$ 0.02 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize File-specific summaries are weighted by encoded strand count. Read accuracy and M/X/I/D are weighted means of file-specific medians, not pooled-read medians. Successful/failed sequence features are weighted file-specific group means; files with an empty group are excluded from that group mean. A wholly undefined run-level group summary is NA. Percentages and their SDs are displayed on the percentage scale. Values are mean $\pm$ sample SD across exactly 11 test seeds (1--10, 42). Blue denotes the baseline from this experiment folder. Red denotes the largest unrounded mean alignment rate among the modified configurations, which need not exceed baseline. KL uses natural logarithms. S5 comparisons use these same per-test-set values.\end{flushleft}
+\end{adjustwidth}
+\end{table}

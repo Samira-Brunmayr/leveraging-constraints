@@ -1,0 +1,26 @@
+\begin{table}[!htb]
+\begin{adjustwidth}{-2.25in}{0in}
+\centering
+\caption{Beam search combining homopolymer exclusion, normalized length and KL penalties.}
+\label{tab:combined_constraint_results}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+$\lambda_{\mathrm{len}}$ & $\lambda_{\mathrm{KL}}$ & Payload & Alignment & Read acc. & M rate & X rate & I rate & D rate \\
+ &  & acc. (\%) & rate (\%) & (\%) & (\%) & (\%) & (\%) & (\%) \\
+\midrule
+\rowcolor{blue!15} - & - & 28.75 $\pm$ 0.10 & 42.93 $\pm$ 0.14 & 85.61 $\pm$ 0.00 & 92.94 $\pm$ 0.03 & 2.50 $\pm$ 0.09 & 0.00 $\pm$ 0.00 & 3.90 $\pm$ 0.02 \\
+\rowcolor{red!15} 5 & 1 & 35.76 $\pm$ 0.08 & 59.34 $\pm$ 0.10 & 87.19 $\pm$ 0.01 & 93.68 $\pm$ 0.01 & 1.68 $\pm$ 0.11 & 0.00 $\pm$ 0.01 & 3.92 $\pm$ 0.03 \\
+5 & 5 & 35.70 $\pm$ 0.13 & 58.93 $\pm$ 0.10 & 87.18 $\pm$ 0.01 & 93.65 $\pm$ 0.01 & 1.77 $\pm$ 0.00 & 0.00 $\pm$ 0.01 & 4.07 $\pm$ 0.02 \\
+5 & 10 & 34.90 $\pm$ 0.08 & 57.93 $\pm$ 0.09 & 86.34 $\pm$ 0.00 & 93.61 $\pm$ 0.01 & 1.78 $\pm$ 0.00 & 0.01 $\pm$ 0.01 & 4.01 $\pm$ 0.02 \\
+10 & 1 & 36.65 $\pm$ 0.09 & 58.83 $\pm$ 0.14 & 87.18 $\pm$ 0.01 & 93.68 $\pm$ 0.00 & 1.80 $\pm$ 0.00 & 0.02 $\pm$ 0.00 & 3.67 $\pm$ 0.01 \\
+10 & 5 & 36.46 $\pm$ 0.12 & 58.41 $\pm$ 0.13 & 87.18 $\pm$ 0.00 & 93.62 $\pm$ 0.01 & 1.80 $\pm$ 0.00 & 0.02 $\pm$ 0.00 & 3.69 $\pm$ 0.01 \\
+10 & 10 & 35.40 $\pm$ 0.12 & 57.24 $\pm$ 0.10 & 86.36 $\pm$ 0.05 & 93.55 $\pm$ 0.02 & 1.81 $\pm$ 0.00 & 0.02 $\pm$ 0.00 & 3.69 $\pm$ 0.01 \\
+15 & 1 & 36.78 $\pm$ 0.10 & 56.97 $\pm$ 0.11 & 87.18 $\pm$ 0.01 & 93.52 $\pm$ 0.02 & 1.82 $\pm$ 0.01 & 0.02 $\pm$ 0.00 & 3.58 $\pm$ 0.01 \\
+15 & 5 & 36.31 $\pm$ 0.09 & 56.66 $\pm$ 0.09 & 87.18 $\pm$ 0.00 & 93.45 $\pm$ 0.01 & 1.83 $\pm$ 0.01 & 0.26 $\pm$ 0.08 & 3.59 $\pm$ 0.01 \\
+15 & 10 & 35.06 $\pm$ 0.10 & 55.37 $\pm$ 0.10 & 86.52 $\pm$ 0.17 & 93.30 $\pm$ 0.02 & 1.84 $\pm$ 0.01 & 0.80 $\pm$ 0.06 & 3.58 $\pm$ 0.01 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize File-specific summaries are weighted by encoded strand count. Read accuracy and M/X/I/D are weighted means of file-specific medians, not pooled-read medians. Successful/failed sequence features are weighted file-specific group means; files with an empty group are excluded from that group mean. A wholly undefined run-level group summary is NA. Percentages and their SDs are displayed on the percentage scale. Values are mean $\pm$ sample SD across exactly 11 test seeds (1--10, 42). Blue denotes the baseline from this experiment folder. Red denotes the largest unrounded mean alignment rate among the modified configurations, which need not exceed baseline. KL uses natural logarithms. S5 comparisons use these same per-test-set values.\end{flushleft}
+\end{adjustwidth}
+\end{table}
